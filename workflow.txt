@@ -1,0 +1,4 @@
+1. New app
+2. Migration with creating DB with 3 tables (listings, categories, subcategories)
+3. Make 3 models - (category.rb, listing.rb, subcategory.rb)
+
