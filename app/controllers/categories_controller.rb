@@ -10,4 +10,8 @@ class CategoriesController < ApplicationController
     @forsale = @categories[5]
 
   end
+
+  def show
+
+  end
 end
