@@ -1,5 +1,23 @@
+<div class="topbar">
+  <div class="container">
+    <div class="vertical-center">
+      <%= link_to 'rubylist', root_path %> > jobs > accounting
+    </div>
+  </div>
+</div>
+<hr>
 <div class="container">
-  <%= @listing.title %>
-  <%= @listing.description %>
-  <%= @listing.city %>
+  <div>
+    <button type="button">Reply</button>
+    <p>posted <%= time_ago_in_words(@listing.created_at) %> ago</p>
+    <h1 class="listing-header"><%= @listing.title %></h1>
+    <div class="box">test</div>
+    <hr>
+    <p><%= @listing.description %></p>
+  </div>
+  <hr>
+  <footer>
+    <p>post id: <%= @listing.id %></p>
+    <p>posted <%= time_ago_in_words(@listing.created_at) %> ago</p>
+  </footer>
 </div>
