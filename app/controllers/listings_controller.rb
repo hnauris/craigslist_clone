@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
 
     if @listing.save
-      redirect_to root_path
+      redirect_to @listing
     else
       render new_listing_path
     end
@@ -21,6 +21,6 @@ class ListingsController < ApplicationController
 
     def listing_params
       #allows the following params be made in the listing table
-      params.require(:listing).permit(:title, :description, :city, :state, :zipcode)
+      params.require(:listing).permit(:title, :description, :city, :state, :zipcode, :category_id, :subcategory_id)
     end
 end
