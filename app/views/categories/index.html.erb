@@ -27,50 +27,39 @@
     <div class="center-one col-md-2">
       <table>
         <tr>
-          <th>community</th>
+          <th><%= link_to 'Community' %></th>
         </tr>
         <tr>
           <td>
+          <% @community.subcategories.each do |subcategory| %>
             <ul>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
+              <li><%= link_to subcategory.name %></li>
             </ul>
+          <% end %>
           </td>
         </tr>
         <tr>
-          <th>Personals</th>
+          <th><%= link_to 'Personals' %></th>
         </tr>
         <tr>
           <td>
-            <ul>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-            </ul>
+            <% @personals.subcategories.each do |subcategory| %>
+              <ul>
+                <li><%= link_to subcategory.name %></li>
+              </ul>
+            <% end %>
           </td>
         </tr>
         <tr>
-          <th>Services</th>
+          <th><%= link_to 'Services' %></th>
         </tr>
         <tr>
           <td>
-            <ul>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-              <li>test</li>
-            </ul>
+            <% @services.subcategories.each do |subcategory| %>
+              <ul>
+                <li><%= link_to subcategory.name %></li>
+              </ul>
+            <% end %>
           </td>
         </tr>
       </table>
@@ -79,45 +68,27 @@
     <div class="center-two col-md-2">
     <table>
       <tr>
-        <th>Housing</th>
+        <th><%= link_to 'Housing' %></th>
       </tr>
       <tr>
         <td>
-          <ul>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-          </ul>
+         <% @housing.subcategories.each do |subcategory| %>
+            <ul>
+              <li><%= link_to subcategory.name %></li>
+            </ul>
+          <% end %>
         </td>
       </tr>
       <tr>
-        <th>For sale</th>
+        <th><%= link_to 'For Sale' %></th>
       </tr>
       <tr>
         <td>
-          <ul>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-          </ul>
+          <% @forsale.subcategories.each do |subcategory| %>
+            <ul>
+              <li><%= link_to subcategory.name %></li>
+            </ul>
+          <% end %>
         </td>
       </tr>
     </table>
@@ -126,36 +97,15 @@
     <div class="center-three col-md-2">
     <table>
       <tr>
-        <th>jobs</th>
+        <th><%= link_to 'Jobs' %></th>
       </tr>
       <tr>
         <td>
-          <ul>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-          </ul>
+          <% @jobs.subcategories.each do |subcategory| %>
+            <ul>
+              <li><%= link_to subcategory.name %></li>
+            </ul>
+          <% end %>
         </td>
       </tr>
     </table>
