@@ -1,12 +1,6 @@
-<div class="topbar">
-  <div class="container">
-    <div class="vertical-center">
-      rubylist > jobs > accounting
-    </div>
-  </div>
-</div>
-<hr>
+
 <div class="container">
+  <%= link_to 'rubylist', root_path %> > <%= link_to @category.name, @category %> > <%= @subcategory.name %>
   <div class="row">
     <div class="newest col-md-1">newest</div>
     <div class="oldest col-md-1">oldest</div>
