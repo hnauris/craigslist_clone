@@ -7,8 +7,25 @@ class ListingsController < ApplicationController
   def search
     @listings = Listing.search(params)
   end
+
   def new
     @listing = Listing.new
+  end
+
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update(listing_params)
+    redirect_to @listing
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    redirect_to mylistings_path
   end
 
   def create

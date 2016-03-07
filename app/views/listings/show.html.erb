@@ -15,6 +15,10 @@
     <hr>
     <p><%= @listing.description %></p>
   </div>
+  <% if @listing.user = current_user %>
+    <li><%= link_to 'Edit', edit_listing_path %></li>
+    <li><%= link_to 'Delete', @listing, data: {confirm: "Are you sure you want to delete this listing?"}, method: :delete  %></li>
+  <% end %>
   <hr>
   <footer>
     <p>post id: <%= @listing.id %></p>

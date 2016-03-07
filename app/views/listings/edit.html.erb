@@ -1,0 +1,33 @@
+<%= javascript_include_tag 'listings.js' %>
+
+<div class="topbar">
+  <div class="container">
+    <div class="vertical-center">
+      rubylist > jobs > accounting
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div id="contact-area">
+    <%= form_for @listing do |f| %>
+    <ul>
+      <li><%= f.label :title %></li>
+      <li><%= f.text_field :title, class: "form-control" %></li>
+      <li><%= f.label :description %></li>
+      <li><%= f.text_area :description, class: "form-control" %></li>
+      <li><%= f.label :category_id %></li>
+      <li><%= f.select :category_id, Category.all.map { |f| [f.name, f.id]} %></li>
+      <li><%= f.label :subcategory_id %></li>
+      <li><%= f.select :subcategory_id, options_for_select([]) %></li>
+      <li><%= f.label :city %></li>
+      <li><%= f.text_field :city, class: "form-control" %></li>
+      <li><%= f.label :state %></li>
+      <li><%= f.text_field :state, class: "form-control" %></li>
+      <li><%= f.label :zipcode %></li>
+      <li><%= f.text_field :zipcode, maxlength: "5", class: "form-control"  %></li>
+    </ul>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
