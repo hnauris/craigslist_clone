@@ -102,6 +102,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slide-down-alerts-rails (0.0.2)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -140,6 +141,7 @@ DEPENDENCIES
   rails (= 4.1.0)
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
+  slide-down-alerts-rails
   spring
   sqlite3
   turbolinks

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'slide-down-alerts-rails'
 gem 'devise'
 gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.3.6'
