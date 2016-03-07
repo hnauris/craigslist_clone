@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     resources :subcategories
   end
 
-  resources :listings
+  #for the search bar in main page
+  resources :listings do
+    collection do
+      get 'search'
+    end
+  end
 
   root 'categories#index'
 

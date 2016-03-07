@@ -7,21 +7,14 @@
         <%= link_to 'post to classfields', new_listing_path %>
         <li>my account</li>
       </ul>
-      <form>
-        <p>search subylist</p>
-        <input type="text", name="firstname" placeholder="search" size="20">
-        <br>
-        <input type="text", name="firstname", placeholder="where", size="20">
-        <br>
-        <select>
-          <option value="volvo">volvo</option>
-          <option value="saab">saab</option>
-          <option value="mercedes">mercedes</option>
-          <option value="audi">audi</option>
-        </select>
-        <button type="button"> >
-        </button>
-      </form>
+
+        <%= form_tag search_listings_path, method: :get do |f| %>
+          <p>search subylist</p>
+          <%= text_field_tag :search, nil, placeholder: 'search' %>
+          <%= text_field_tag :location, nil, placeholder: 'location' %>
+          <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}) %>
+          <%= submit_tag '>' %>
+        <% end %>
     </div>
 
     <div class="center-one col-md-2">

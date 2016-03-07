@@ -1,4 +1,8 @@
 class ListingsController < ApplicationController
+
+  def search
+    @listing = Listing.search(params)
+  end
   def new
     @listing = Listing.new
   end
