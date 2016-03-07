@@ -1,6 +1,9 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :subcategory
+  belongs_to :user
+  #some extra validation to validate that user id is present
+  validates :user_id, presence: true
 
 
   #Geocode gem for searching by location (adds coordinates)
