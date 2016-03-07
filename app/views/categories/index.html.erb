@@ -4,8 +4,8 @@
     <div class="left col-md-3">
       <a href="#"><h1>rubylist</h1></a>
       <ul>
-        <%= link_to 'post to classfields', new_listing_path %>
-        <li>my account</li>
+        <li><%= link_to 'post to classfields', new_listing_path %></li>
+        <li><%= link_to 'my account', new_user_session_path %></li>
       </ul>
 
         <%= form_tag search_listings_path, method: :get do |f| %>
