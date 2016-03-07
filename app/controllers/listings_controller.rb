@@ -1,4 +1,8 @@
 class ListingsController < ApplicationController
+  #Require logging in for new and create actions
+  before_filter :authenticate_user!, only: [:new, :create]
+  #Requires to be the right user for these actions
+  before_filter :is_user?, only: [:edit, :update, :delete, :destroy]
 
   def mylistings
     @listings = Listing.where(user: current_user)
@@ -31,11 +35,13 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     #this is a devise gem thing for finding and using the current logged in user
-    @listing.user = current_user
+
 
     if @listing.save
+      @listing.user = current_user
       redirect_to @listing
     else
+      flash[:alert] = @listing.errors.full_messages.to_sentence
       render new_listing_path
     end
   end
@@ -50,4 +56,12 @@ class ListingsController < ApplicationController
       #allows the following params be made in the listing table
       params.require(:listing).permit(:title, :description, :city, :state, :zipcode, :category_id, :subcategory_id)
     end
+
+    def is_user?
+      @listing = Listing.find(params[:id])
+      unless @listing.user == current_user
+        redirect_to root_path, alert: "Sorry, you are not the owener of this listing!"
+      end
+    end
+
 end

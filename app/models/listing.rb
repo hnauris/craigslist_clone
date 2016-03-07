@@ -5,6 +5,11 @@ class Listing < ActiveRecord::Base
   #some extra validation to validate that user id is present
   validates :user_id, presence: true
 
+  validates_presence_of :title
+  validates_presence_of :description
+  validates_presence_of :city
+  validates_presence_of :state
+
 
   #Geocode gem for searching by location (adds coordinates)
   geocoded_by :full_address
