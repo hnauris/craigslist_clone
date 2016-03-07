@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   match '/contact', to: 'pages#contact', via: :get
 
   match '/subcategories/find_by_category', to: 'subcategories#find_by_category', via: :post
+
+  match '/mylistings', to: 'listings#mylistings', via: :get
 end
